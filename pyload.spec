@@ -6,6 +6,14 @@ License:	GPL v3+
 Group:		Applications
 Source0:	%{name}-src-v%{version}.zip
 # Source0-md5:	5f03a25d772db32eb5c550bba47294c1
+Source1:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/usr/share/applications/%{name}-gui.desktop
+# Source1-md5:	b96a4e5091463b3b7fd79208623f1a3a
+Source2:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/usr/share/applications/%{name}.desktop
+# Source2-md5:	c67462993d27d5884677dd6e8a8a17d2
+Source3:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/usr/share/pixmaps/%{name}-gui.png
+# Source3-md5:	73fcec930d25a49e1b99576069d88bd5
+Source4:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/usr/share/pixmaps/%{name}.png
+# Source4-md5:	8cbffcc4e7bbd5441a764d844ca2f05e
 URL:		https://bitbucket.org/spoob/pyload/
 BuildRequires:	unzip
 Requires:	js
@@ -27,12 +35,18 @@ Python and currently under heavy development.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name},%{_desktopdir},%{_pixmapsdir}}
 
 cp -r * $RPM_BUILD_ROOT%{_datadir}/%{name}
 ln -s %{_datadir}/%{name}/pyLoadCore.py $RPM_BUILD_ROOT%{_bindir}/pyLoadCore
 ln -s %{_datadir}/%{name}/pyLoadCli.py $RPM_BUILD_ROOT%{_bindir}/pyLoadCli
 ln -s %{_datadir}/%{name}/pyLoadGui.py $RPM_BUILD_ROOT%{_bindir}/pyLoadGui
+
+# icons and desktops
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{SOURCE4} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,6 +76,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/%{name}/icons
 %{_datadir}/%{name}/icons/*.png
 %{_datadir}/%{name}/icons/*.ico
+%{_desktopdir}/*.desktop
+%{_pixmapsdir}/*.png
 
 # must be executable to run
 %attr(755,root,root) %{_datadir}/%{name}/pyLoadCli.py
