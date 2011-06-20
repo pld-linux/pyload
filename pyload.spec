@@ -19,7 +19,9 @@ BuildRequires:	unzip
 Requires:	js
 Requires:	python-PyQt4
 Requires:	python-flup
+Requires:	python-pycurl
 Requires:	python-pynotify
+Requires:	python-sqlite
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
