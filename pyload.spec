@@ -1,11 +1,11 @@
 Summary:	Download tool for One-Click-Hoster written in python
 Name:		pyload
-Version:	0.4.6
+Version:	0.4.7
 Release:	0.1
 License:	GPL v3+
 Group:		Applications
-Source0:	%{name}-src-v%{version}.zip
-# Source0-md5:	5f03a25d772db32eb5c550bba47294c1
+Source0:	http://download.pyload.org/%{name}-src-v%{version}.zip
+# Source0-md5:	488e5ba1a6fbeb9beaf13d0b608bf8ab
 Source1:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/usr/share/applications/%{name}-gui.desktop
 # Source1-md5:	b96a4e5091463b3b7fd79208623f1a3a
 Source2:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/usr/share/applications/%{name}.desktop
