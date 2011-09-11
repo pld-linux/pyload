@@ -17,11 +17,12 @@ Source4:	http://bitbucket.org/ranan/pyload-dist/raw/88fa4a2f3f0c/debian/pyload/u
 URL:		https://bitbucket.org/spoob/pyload/
 BuildRequires:	unzip
 Requires:	js
+Requires:	python-Crypto
 Requires:	python-PyQt4
 Requires:	python-flup
+Requires:	python-modules-sqlite
 Requires:	python-pycurl
 Requires:	python-pynotify
-Requires:	python-sqlite
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
