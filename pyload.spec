@@ -23,6 +23,9 @@ Requires:	python-flup
 Requires:	python-modules-sqlite
 Requires:	python-pycurl
 Requires:	python-pynotify
+Suggests:	python-PIL
+Suggests:	python-pyOpenSSL
+Suggests:	tesseract
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
